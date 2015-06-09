@@ -1,0 +1,31 @@
+<% provide(:dashboard, "active") %>
+<% @page_title = "Eduklika | Dodaj grupę" %>
+
+<div class="col-md-6 col-xs-10 center">
+  <%= render "shared/flash" %>
+  <h2 class="form-course-heading">Dodaj nową grupę do <small><%= @course.name %></small></h2>
+  <%= form_for "" do |f| %>
+      <div class="form-group">
+        <%= f.label "Wbierz grupę: " %>
+        <%= f.collection_select :group_id, @groups, :id, :group_full_name %>
+      </div>
+      <%= f.submit "Zatwierdź", :class => "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+  <hr>
+  <% if @course.groups.empty? %>
+      <h4 class="form-course-heading">Nie dodano jeszcze żadnej grupy.</h4>
+  <% else %>
+      <div class="panel panel-default">
+        <div class="panel-heading">Grupy dodane do kursu:</div>
+        <% @course.groups.each do |group| %>
+            <table class="table">
+              <tr>
+                <td><%= group.name %> (<%= group.specialization %>)</td>
+                <td><%= link_to "Usuń", course_group_path(@course, group), method: :delete, data:{confirm: "Czy jesteś pewien, że chcesz usunąć grupę z kursu?"}, :class => "pull-right" %></td>
+              </tr>
+            </table>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="text-center"><%= link_to "&larr; powrót".html_safe, courses_path %></div>
+</div>

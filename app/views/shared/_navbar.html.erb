@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Eduklika", unauthenticated_root_path, :class => "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <% if user_signed_in? %>
+          <%= render "shared/navbar_panel" %>
+      <% else %>
+          <ul class="nav navbar-nav pull-right">
+            <li role="presentation" class="active"><%= link_to "Zaloguj", new_user_session_path %></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,9 @@
+<div class="input-group">
+  <% if params[:controller] == "courses" %>
+      <span class="input-group-addon"> Kursy / </span>
+  <% elsif params[:controller] == "posts" %>
+      <span class="input-group-addon"> Posty / </span>
+  <% end %>
+    <%= text_field_tag :search, params[:search], :class => "form-control", autofocus: true, :placeholder => "Szukaj..." %>
+    <span class="input-group-btn"><%= button_tag image_tag("find.png"), :class => "btn btn-default" %></span>
+</div>

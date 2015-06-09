@@ -1,0 +1,12 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$home-background-gray:        #f4f3f4;
+$home-cooperation-green:      #3bc9c9;
+$home-development-blue:       #4eb4fc;
+$home-availability-orange:    #f7a72f;
+$home-border-gray:            #e3e3e3;

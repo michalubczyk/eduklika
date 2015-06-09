@@ -1,0 +1,48 @@
+.jumbotron {
+  margin-bottom: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  color: #ffffff;
+  .lead { margin: 0 15%; }
+}
+
+.section-infos {
+  padding: 20px 0 10px;
+  text-align: center;
+  font-size: 16px;
+  background-color: $home-background-gray;
+  .circle {
+    @include border-radius(50%);
+    width: 150px;
+    height: 150px;
+  }
+  .cooperation { background-color: $home-cooperation-green; }
+  .development { background-color: $home-development-blue; }
+  .availability { background-color: $home-availability-orange; }
+}
+
+.section-contact {
+  padding: 20px 0;
+  background-color: $home-background-gray;
+  text-align: justify;
+  font-size: 16px;
+  border-bottom: 1px solid $home-border-gray;
+  .btn-block { margin-top: 25px; }
+}
+
+footer{ padding: 5px 0;}
+
+.form-signin {
+  padding-top: 55px;
+  width: 330px;
+  margin: 0 auto;
+  .form-signin-heading { text-align: center; }
+  .form-control { height: 50px; margin-bottom: 10px; }
+  .checkbox {
+    margin-left: 20px;
+    label{ padding-left: 0px; }
+  }
+}

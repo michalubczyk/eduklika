@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "navbar.scss";
+@import "content.scss";
+@import "common.scss";
+@import "home.scss";
+@import "courses.scss";
+@import "sidebar.scss";
+
+body{ padding-top: 50px; }
+

@@ -1,0 +1,13 @@
+<% @courses.each do |course| %>
+    <div class="list-group-item">
+      <%= link_to course_posts_path(course), { :class => 'tooltips', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', :title => course.description } do %>
+          <%= course.name.truncate(60, omission:' [...]') %>
+          <%= content_tag :span, course.posts.count, :class => "badge" %>
+      <% end %>
+      <div class="btn-group pull-right">
+        <ul>
+          <li><%= image_tag course.user.avatar.small_thumb.url, { :class => 'tooltips', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', :title => "#{course.user.name} #{course.user.surname}" } %></li>
+        </ul>
+      </div>
+    </div>
+<% end %>

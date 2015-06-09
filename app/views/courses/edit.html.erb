@@ -1,0 +1,6 @@
+<% provide(:dashboard, "active") %>
+<% @page_title = "Eduklika | Edytuj kurs" %>
+
+<%= render "courses/validation" %>
+<h2 class="form-course-heading">Edytuj <small><%= @course.name %></small></h2>
+<%= render "courses/form" %>

@@ -1,0 +1,21 @@
+.row {
+  .col-sm-8 {
+    margin: 0 2%;
+    .btn-xs { width: 40px; }
+  }
+  .col-sm-offset-1 { margin: 0 2%; }
+  .text-center { margin-top: 20px; }
+  .panel-heading { text-align: center; }
+  .form-group{ text-align: center; margin-top: 30px; }
+}
+
+.alert { margin-top: 20px; padding: 5px 10px; }
+.alert-item { list-style-type: none; }
+
+ul { li { list-style-type: none; } }
+
+.tooltip-inner {
+  max-width: 350px;
+  text-align: justify;
+  padding: 10px;
+}

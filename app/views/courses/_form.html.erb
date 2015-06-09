@@ -1,0 +1,10 @@
+<div class="col-md-6 col-xs-10 center">
+  <%= form_for @course do |f| %>
+      <%= f.text_field :name, autofocus: true, :class => "form-control", :placeholder => "Nazwa kursu" %>
+      <%= f.text_area :description, autofocus: true, :class => "form-control", :placeholder => "Opis kursu" %>
+      <%= f.text_field :tag, autofocus: true, :class => "form-control", :placeholder => "Tagi kursu" %>
+      <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+      <%= f.submit "Zatwierdź", :class => "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+  <div class="text-center"><%= link_to "&larr; powrót".html_safe, courses_path %></div>
+</div>

@@ -1,0 +1,15 @@
+<div class="sidebar-module sidebar-module-inset">
+  <h3><span class="label label-success"><%= current_user.name %> <%= current_user.surname %></span></h3>
+  <%= image_tag current_user.avatar.thumb.url, :class => "img-thumbnail" %>
+  <ul class="list-group">
+    <li class="list-group-item"><span class="label label-primary">Email:</span> <%= current_user.email %></li>
+    <li class="list-group-item"><span class="label label-primary">Dołączył:</span> <%= current_user.created_at.strftime("%d.%m.%Y") %></li>
+    <% if current_user.function == "student" then %>
+        <li class="list-group-item"><span class="label label-primary">Status:</span> uczeń</li>
+        <li class="list-group-item"><span class="label label-primary">Kursy:</span> <%= current_user.group.courses.count %></li>
+    <% elsif current_user.function == "teacher" then %>
+        <li class="list-group-item"><span class="label label-primary">Status:</span> nauczyciel</li>
+        <li class="list-group-item"><span class="label label-primary">Kursy:</span> <%= current_user.courses.count %></li>
+    <% end %>
+  </ul>
+</div>

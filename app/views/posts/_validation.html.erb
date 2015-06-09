@@ -1,0 +1,17 @@
+<div class="col-md-6 col-xs-10 center">
+  <% if @post.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @post.errors.messages.values.each do |message| %>
+              <% message.each do |msg| %>
+                  <li class="alert-item">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Błąd:</span>
+                    <%= msg %>
+                  </li>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>

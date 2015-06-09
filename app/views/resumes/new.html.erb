@@ -1,0 +1,16 @@
+<% provide(:dashboard, "active") %>
+<% @page_title = "Eduklika | Załącz plik" %>
+
+<%= render "resumes/validation" %>
+<h2 class="form-course-heading">Załącz plik do <small><%= @post.title %></small></h2>
+<div class="col-md-6 col-xs-10 center">
+  <%= form_for([@resume.post.course, @post, @resume], html: { multipart: true }) do |f| %>
+      <%= f.text_field :name, autofocus: true, :class => "form-control", :placeholder => "Nazwa pliku" %>
+      <div class="form-group">
+        <%= f.file_field :attachment %>
+        <%= f.hidden_field :post_id, :value => "#{@post.id}" %>
+      </div>
+      <%= f.submit "Zatwierdź", :class => "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+  <div class="text-center"><%= link_to "&larr; powrót".html_safe, course_posts_path %></div>
+</div>

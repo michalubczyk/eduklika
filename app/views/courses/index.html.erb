@@ -1,0 +1,17 @@
+<% provide(:dashboard, "active") %>
+<% @page_title = "Eduklika | Kursy" %>
+
+<div class="col-sm-8">
+  <%= render "shared/flash" %>
+  <h4>Twoje kursy:</h4>
+  <ul class="list-group">
+    <% if current_user.function == "student" then %>
+        <%= render "courses/student" %>
+    <% elsif current_user.function == "teacher" then %>
+        <%= render "courses/teacher" %>
+    <% end %>
+  </ul>
+</div>
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+  <%= render "shared/sidebar" %>
+</div>

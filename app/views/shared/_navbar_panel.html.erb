@@ -1,0 +1,33 @@
+<ul class="col-sm-5 col-md-4 nav navbar-nav navbar-left">
+  <% if params[:controller] == "courses" %>
+      <%= form_tag(courses_path, :method => "get", :class => "navbar-form", :role => "search") do %>
+          <%= render "shared/navbar_search" %>
+      <% end %>
+  <% elsif params[:controller] == "posts" %>
+      <%= form_tag(course_posts_path, :method => "get", :class => "navbar-form", :role => "search") do %>
+          <%= render "shared/navbar_search" %>
+      <% end %>
+  <% end %>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+  <li role="presentation" class="<%= yield(:dashboard) %>">
+    <%= link_to "Kursy", courses_path %>
+  </li>
+  <% if current_user.function == "teacher" %>
+      <li role="presentation" class="dropdown <%= yield(:create) %>">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          Dodaj <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <% if params[:controller] == "posts" %>
+              <li><%= link_to "Post", new_course_post_path(@course) %></li>
+          <% end %>
+          <li><%= link_to "Kurs", new_course_path %></li>
+        </ul>
+      </li>
+  <% end %>
+  <li role="presentation" class="<%= yield(:edit) %>"><%= link_to "Edytuj profil", edit_user_registration_path %></li>
+  <li role="presentation"><%= link_to "Wyloguj", destroy_user_session_path, method: :delete %></li>
+</ul>
+
+
